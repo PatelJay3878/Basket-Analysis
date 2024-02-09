@@ -1,0 +1,78 @@
+This are all the DAX used in creating Calculated Columns for transforming raw data.
+
+
+--------------------------------------------------------------------------------------------------------
+
+Basket = 'Basket Analysis'[Product1]&" - "&'Basket Analysis'[Product2]
+
+--------------------------------------------------------------------------------------------------------
+
+Confidence of Prod1 = 
+
+var Prod1= 'Basket Analysis'[Product1]
+
+var SupportProd1 = COUNTROWS(FILTER(Groceries, Groceries[Prodcuts] = Prod1)) / [Total Transcations]
+
+RETURN
+'Basket Analysis'[Suport Basket]/ SupportProd1
+
+--------------------------------------------------------------------------------------------------------
+Confidence of Prod2 = 
+
+var Prod2= 'Basket Analysis'[Product2]
+
+var SupportProd2 = COUNTROWS(FILTER(Groceries, Groceries[Prodcuts] = Prod2)) / [Total Transcations]
+
+RETURN
+'Basket Analysis'[Suport Basket]/ SupportProd2
+--------------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------
+Lift = 
+
+var Prod1 = 'Basket Analysis'[Product1]
+var Prod2 = 'Basket Analysis'[Product2]
+
+var Prod1Support = COUNTROWS(FILTER(Groceries, Groceries[Prodcuts] = Prod1))/ [Total Transcations]
+var Prod2Support = COUNTROWS(FILTER(Groceries, Groceries[Prodcuts] = Prod2))/[Total Transcations]
+
+RETURN
+'Basket Analysis'[Suport Basket]/(Prod1Support * Prod2Support)
+--------------------------------------------------------------------------------------------------------
+
+
+
+
+--------------------------------------------------------------------------------------------------------
+
+Support Basket = 
+VAR Prod1 = 'Basket Analysis'[Product1]
+VAR Prod2 = 'Basket Analysis'[Product2]
+VAR Prod1Transcations =
+    SELECTCOLUMNS (
+        FILTER ( Groceries, Groceries[Prodcuts] = Prod1 ),
+        "TransactionID", Groceries[Transcation Id]
+    )
+VAR Prod2Transcations =
+    SELECTCOLUMNS (
+        FILTER ( Groceries, Groceries[Prodcuts] = Prod2 ),
+        "TransactionID", Groceries[Transcation Id]
+    )
+VAR BothProdTransactions =
+    INTERSECT ( Prod1Transcations, Prod2Transcations )
+RETURN
+    COUNTROWS ( BothProdTransactions ) / [Total Transcations]
+
+--------------------------------------------------------------------------------------------------------
+
+
+For Measures:
+
+Total Products:
+Total Products = DISTINCTCOUNT(Groceries[Prodcuts])
+
+
+Total Transcations:
+Total Transcations = DISTINCTCOUNT(Groceries[Transcation Id]) 
+
