@@ -22,12 +22,12 @@ Basket Analysis operates by calculating three essential metrics for each product
 The project involved obtaining data, transforming it using Power Query, and loading it into Power BI for analysis. I cleaned the data, computed key metrics, and visualized the insights to create an interactive dashboard.
 
 ## Getting Started
-To utilize Basket Analysis dashboard effectively, follow these steps:
+To utilize the Basket Analysis dashboard effectively, follow these steps:
 1.	Clone or Download: Clone or download this repository to your local machine.
 2.	Open the Dashboard: Locate the Power BI file (*.pbix) in the repository and open it using Power BI Desktop.
 3.	Data Connection: Connect the dashboard to your dataset or use the sample dataset provided.
 4.	Explore Insights: Navigate through the interactive visualizations to uncover associations between products and gain valuable insights into customer purchasing behavior.
-5.	Utilize Recommendations: Use the insights provided by the dashboard to inform product placement, pricing strategies, and recommendations to customers.
+5.	Utilize the Recommendations: Use the insights provided by the dashboard to inform product placement, pricing strategies, and recommendations to customers.
 
 ## Sample Data
 I have included a sample dataset in the repository to facilitate exploration and understanding of the dashboard. Below is a snippet of the first 10 rows of the sample data:
@@ -36,7 +36,7 @@ I have included a sample dataset in the repository to facilitate exploration and
 
 This dataset represents the first 10 transactions with associated items. Each row corresponds to a transaction, and the items purchased in that transaction are listed.
 
-This Data set is taken from kaggle and also available in repository.
+This data set is taken from kaggle and also available in the repository.
 ## DAX used for Calculated Colomns
 
 DAX (Data Analysis Expressions)
@@ -47,14 +47,14 @@ Data Analysis Expressions (DAX) were used to compute key metrics such as support
 
 
 
-**Note**: All the calcuated DAX is availabel in separte file in Repository. 
+**Note**: All the calculated DAX is available in a separate file in Repository. 
 
 ## Findings
 
 Analysis reveals several noteworthy insights, including strong associations between certain products and recommendations for product placement and promotional strategies. 
 
 For example: 
-Here is an assocition between Whipped Cream and its lift values respective to various products.
+Here is an association between Whipped Cream and its lift values respective to various products.
 
 ![lift values for wipped cream - 2](https://github.com/PatelJay3878/Basket-Analysis/assets/73180853/d3a3dea7-1021-4b70-8e36-50f7e3e2c1c5)
 
