@@ -37,7 +37,7 @@ I have included a sample dataset in the repository to facilitate exploration and
 This dataset represents the first 10 transactions with associated items. Each row corresponds to a transaction, and the items purchased in that transaction are listed.
 
 This Data set is taken from kaggle and also available in repository.
-## DAX
+## DAX used for Calculated Colomns
 
 DAX (Data Analysis Expressions)
 Data Analysis Expressions (DAX) were used to compute key metrics such as support, confidence, and lift for Market Basket Analysis. The following steps outline the DAX calculations used in our dashboard:
